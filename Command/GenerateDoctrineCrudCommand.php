@@ -112,7 +112,7 @@ EOT
             throw new \RuntimeException(sprintf('Entity "%s" does not exist in the "%s" bundle. Create it with the "doctrine:generate:entity" command and then execute this command again.', $entity, $bundle));
         }
 
-        $bundle      = $this->getContainer()->get('kernel')->getBundle($bundle);
+        $bundle = $this->getContainer()->get('kernel')->getBundle($bundle);
 
         $generator = $this->getGenerator($bundle);
         $generator->generate($bundle, $entity, $metadata[0], $format, $prefix, $withWrite, $forceOverwrite);
@@ -211,8 +211,8 @@ EOT
             '',
             $this->getHelper('formatter')->formatBlock('Summary before generation', 'bg=blue;fg=white', true),
             '',
-            sprintf("You are going to generate a CRUD controller for \"<info>%s:%s</info>\"", $bundle, $entity),
-            sprintf("using the \"<info>%s</info>\" format.", $format),
+            sprintf('You are going to generate a CRUD controller for "<info>%s:%s</info>"', $bundle, $entity),
+            sprintf('using the "<info>%s</info>" format.', $format),
             '',
         ));
     }

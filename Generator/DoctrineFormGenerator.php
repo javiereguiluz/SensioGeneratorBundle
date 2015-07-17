@@ -76,6 +76,7 @@ class DoctrineFormGenerator extends Generator
 
         $this->renderFile('form/FormType.php.twig', $this->classPath, array(
             'fields'           => $this->getFieldsFromMetadata($metadata),
+            'fields_mapping'   => $metadata->fieldMappings,
             'namespace'        => $bundle->getNamespace(),
             'entity_namespace' => implode('\\', $parts),
             'entity_class'     => $entityClass,

@@ -323,6 +323,12 @@ EOT
                     throw new \InvalidArgumentException(sprintf('Name "%s" is a reserved word.', $name));
                 }
 
+                // check for valid php variable name
+                if (!$this->isFieldNameValidPhpVariable($name)) {
+                    var_dump('foo');
+                    throw new \InvalidArgumentException(sprintf('Name "%s" doesn\'t result in a valid php variable.', $name));
+                }
+
                 return $name;
             });
 
@@ -390,5 +396,17 @@ EOT
     protected function createGenerator()
     {
         return new DoctrineEntityGenerator($this->getContainer()->get('filesystem'), $this->getContainer()->get('doctrine'));
+    }
+
+    /**
+     * checks if the given fieldname is a valid php variable
+     *
+     * @param $fieldname string
+     *
+     * @return bool
+     */
+    private function isFieldNameValidPhpVariable($name)
+    {
+        return (bool) preg_match('/^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*$/', $name, $matches);
     }
 }

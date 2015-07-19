@@ -324,7 +324,7 @@ EOT
                 }
 
                 // check for valid php variable name
-                if (!$this->isFieldNameValidPhpVariable($name)) {
+                if (!is_null($name) && !$this->isFieldNameValidPhpVariable($name)) {
                     throw new \InvalidArgumentException(sprintf('Name "%s" doesn\'t result in a valid php variable.', $name));
                 }
 

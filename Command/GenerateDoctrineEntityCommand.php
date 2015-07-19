@@ -325,7 +325,6 @@ EOT
 
                 // check for valid php variable name
                 if (!$this->isFieldNameValidPhpVariable($name)) {
-                    var_dump('foo');
                     throw new \InvalidArgumentException(sprintf('Name "%s" doesn\'t result in a valid php variable.', $name));
                 }
 

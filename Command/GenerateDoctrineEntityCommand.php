@@ -324,7 +324,7 @@ EOT
                 }
 
                 // check for valid php variable name
-                if (!is_null($name) && !$this->isFieldNameValidPhpVariable($name)) {
+                if (!is_null($name) && !$generator->isFieldNameValidPhpVariable($name)) {
                     throw new \InvalidArgumentException(sprintf('Name "%s" doesn\'t result in a valid php variable.', $name));
                 }
 
@@ -395,19 +395,5 @@ EOT
     protected function createGenerator()
     {
         return new DoctrineEntityGenerator($this->getContainer()->get('filesystem'), $this->getContainer()->get('doctrine'));
-    }
-
-    /**
-     * checks if the given fieldname is a valid php variable.
-     *
-     * @see http://php.net/manual/en/language.variables.basics.php
-     *
-     * @param $fieldname string
-     *
-     * @return bool
-     */
-    private function isFieldNameValidPhpVariable($name)
-    {
-        return (bool) preg_match('/^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*$/', $name, $matches);
     }
 }

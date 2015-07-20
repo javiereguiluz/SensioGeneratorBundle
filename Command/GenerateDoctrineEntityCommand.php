@@ -318,17 +318,7 @@ EOT
                     throw new \InvalidArgumentException(sprintf('Field "%s" is already defined.', $name));
                 }
 
-                // check reserved words
-                if ($generator->isReservedKeyword($name)) {
-                    throw new \InvalidArgumentException(sprintf('Name "%s" is a reserved word.', $name));
-                }
-
-                // check for valid php variable name
-                if (!is_null($name) && !$generator->isFieldNameValidPhpVariable($name)) {
-                    throw new \InvalidArgumentException(sprintf('Name "%s" doesn\'t result in a valid php variable.', $name));
-                }
-
-                return $name;
+                return Validators::validateEntityPropertyName($name);
             });
 
             $columnName = $questionHelper->ask($input, $output, $question);

@@ -398,7 +398,7 @@ EOT
     }
 
     /**
-     * checks if the given fieldname is a valid php variable
+     * checks if the given fieldname is a valid php variable.
      *
      * @see http://php.net/manual/en/language.variables.basics.php
      *

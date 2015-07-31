@@ -15,7 +15,6 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
-use Sensio\Bundle\GeneratorBundle\Command\Helper\QuestionHelper;
 use Sensio\Bundle\GeneratorBundle\Generator\CommandGenerator;
 
 /**

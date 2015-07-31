@@ -45,25 +45,25 @@ class GenerateCommandCommandTest extends GenerateCommandTest
             array(
                 array(),
                 "FooBarBundle\napp:foo-bar\n",
-                array('FooBarBundle', 'app:foo-bar')
+                array('FooBarBundle', 'app:foo-bar'),
             ),
 
             array(
                 array('bundle' => 'FooBarBundle'),
                 "app:foo-bar\n",
-                array('FooBarBundle', 'app:foo-bar')
+                array('FooBarBundle', 'app:foo-bar'),
             ),
 
             array(
                 array('name' => 'app:foo-bar'),
                 "FooBarBundle\n",
-                array('FooBarBundle', 'app:foo-bar')
+                array('FooBarBundle', 'app:foo-bar'),
             ),
 
             array(
                 array('bundle' => 'FooBarBundle', 'name' => 'app:foo-bar'),
                 '',
-                array('FooBarBundle', 'app:foo-bar')
+                array('FooBarBundle', 'app:foo-bar'),
             ),
         );
     }
@@ -93,7 +93,7 @@ class GenerateCommandCommandTest extends GenerateCommandTest
         return array(
             array(
                 array('bundle' => 'FooBarBundle', 'name' => 'app:my-command'),
-                array('FooBarBundle', 'app:my-command')
+                array('FooBarBundle', 'app:my-command'),
             ),
         );
     }

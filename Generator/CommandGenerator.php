@@ -56,9 +56,9 @@ class CommandGenerator extends Generator
 
     /**
      * Transforms the given string to a new string valid as a PHP class name
-     * ('app:my-project' -> 'AppMyProject', 'app:namespace:name' -> 'AppNamespaceName')
+     * ('app:my-project' -> 'AppMyProject', 'app:namespace:name' -> 'AppNamespaceName').
      *
-     * @param  string $string
+     * @param string $string
      *
      * @return The string transformed to be a valid PHP class name
      */

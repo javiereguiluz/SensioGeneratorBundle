@@ -41,12 +41,10 @@ class GenerateCommandCommandTest extends GenerateCommandTest
 
     public function getInteractiveCommandData()
     {
-        $tmp = sys_get_temp_dir();
-
         return array(
             array(
                 array(),
-                "FooBarBundle\napp:my-command\n",
+                "FooBarBundle\napp:foo-bar\n",
                 array('FooBarBundle', 'app:foo-bar')
             ),
 

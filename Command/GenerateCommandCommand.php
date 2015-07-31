@@ -65,7 +65,10 @@ EOT
 
     public function interact(InputInterface $input, OutputInterface $output)
     {
-        if (null !== $bundle = $input->getArgument('bundle') && null !== $name = $input->getArgument('name')) {
+        $bundle = $input->getArgument('bundle');
+        $name = $input->getArgument('name');
+
+        if (null !== $bundle && null !== $name) {
             return;
         }
 
@@ -101,7 +104,7 @@ EOT
 
         // command name
         if (null !== $name) {
-            $output->writeln(sprintg('Command name: %s', $name));
+            $output->writeln(sprintf('Command name: %s', $name));
         } else {
             $output->writeln(array(
                 '',

@@ -86,9 +86,10 @@ EOT
             ));
 
             $question = new Question($questionHelper->getQuestion('Bundle name', $bundle), $bundle);
-            $question->setValidator(function ($answer) {
+            $container = $this->getContainer();
+            $question->setValidator(function ($answer) use ($container) {
                 try {
-                   $b = $this->getContainer()->get('kernel')->getBundle($answer);
+                   $b = $container->get('kernel')->getBundle($answer);
                 } catch (\Exception $e) {
                     throw new \RuntimeException(sprintf('Bundle "%s" does not exist.', $answer));
                 }

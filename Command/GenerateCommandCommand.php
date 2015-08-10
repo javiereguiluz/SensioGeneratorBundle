@@ -39,15 +39,15 @@ class GenerateCommandCommand extends GeneratorCommand
                 new InputArgument('name', InputArgument::OPTIONAL, 'The name of the command as you type it in the console (e.g. app:my-command)'),
             ))
             ->setHelp(<<<EOT
-The <info>generate:command</info> command helps you generates new commands
+The <info>generate:command</info> command helps you generate new commands
 inside bundles. Provide the bundle name as the first argument and the command
 name as the second argument:
 
-<info>php app/console generate:command AcmeBlogBundle blog:publish-posts</info>
+<info>php app/console generate:command AppBundle blog:publish-posts</info>
 
 If any of the arguments is missing, the command will ask for their values
 interactively. If you want to disable any user interaction, use
-<comment>--no-interaction</comment> but don't forget to pass all needed arguments.
+<comment>--no-interaction</comment>, but don't forget to pass all needed arguments.
 
 Every generated file is based on a template. There are default templates but they can
 be overriden by placing custom templates in one of the following locations, by order of priority:
@@ -56,7 +56,7 @@ be overriden by placing custom templates in one of the following locations, by o
 APP_PATH/Resources/SensioGeneratorBundle/skeleton/command</info>
 
 You can check https://github.com/sensio/SensioGeneratorBundle/tree/master/Resources/skeleton
-in order to know the file structure of the skeleton
+in order to know the file structure of the skeleton.
 EOT
             )
         ;

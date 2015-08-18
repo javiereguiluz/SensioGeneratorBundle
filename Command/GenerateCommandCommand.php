@@ -35,8 +35,8 @@ class GenerateCommandCommand extends GeneratorCommand
             ->setName('generate:command')
             ->setDescription('Generates a console command')
             ->setDefinition(array(
-                new InputArgument('bundle', InputArgument::OPTIONAL, 'The bundle where the controller is generated'),
-                new InputArgument('name', InputArgument::OPTIONAL, 'The name of the command as you type it in the console (e.g. app:my-command)'),
+                new InputArgument('bundle', InputArgument::OPTIONAL, 'The bundle where the command is generated'),
+                new InputArgument('name', InputArgument::OPTIONAL, 'The command\'s name (e.g. app:my-command)'),
             ))
             ->setHelp(<<<EOT
 The <info>generate:command</info> command helps you generate new commands

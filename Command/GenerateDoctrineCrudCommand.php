@@ -267,7 +267,7 @@ EOT
         // second, import the bundle's routing.yml file from the application's routing.yml file
         $routing = new RoutingManipulator($this->getContainer()->getParameter('kernel.root_dir').'/config/routing.yml');
         try {
-            $ret = $auto ? $routing->addResource($bundle->getName(), $format) : false;
+            $ret = $auto ? $routing->addResource($bundle->getName(), 'yml') : false;
         } catch (\RuntimeException $e) {
             // the bundle is already imported form app's routing.yml file
             $errorMessage = sprintf(

@@ -196,6 +196,6 @@ EOT;
 
         list($data['bundle'], $data['controller'], $data['template']) = explode(':', $logicalName);
 
-        return ($part ? $data[$part] : $data);
+        return $part ? $data[$part] : $data;
     }
 }

@@ -67,12 +67,18 @@ class Generator
         return self::dump($target, $this->render($template, $parameters));
     }
 
+    /**
+     * @internal
+     */
     public static function mkdir($dir, $mode = 0777, $recursive = true)
     {
         mkdir($dir, $mode, $recursive);
         self::writeln(sprintf('  <fg=green>created</> %s', self::relativizePath($dir)));
     }
 
+    /**
+     * @internal
+     */
     public static function dump($filename, $content)
     {
         if (file_exists($filename)) {
